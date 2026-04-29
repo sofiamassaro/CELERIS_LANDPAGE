@@ -4,6 +4,7 @@ body {
     margin: 0;
     color: #2d3748;
     line-height: 1.6;
+    text-align: center;
 }
 
 header {
@@ -41,7 +42,7 @@ nav a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: bol
 }
 
 /* Seções e Grid */
-section { padding: 80px 10%; }
+section { padding: 40px 10%; text-align: center; }
 
 .grid {
     display: grid;
