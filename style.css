@@ -1,4 +1,4 @@
-/* Configurações Gerais */
+/* --- 1. CONFIGURAÇÕES GERAIS --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -7,10 +7,12 @@ body {
     text-align: center;
 }
 
+/* Tipografia */
 h1 { font-size: 2.5rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.5rem; }
 
+/* --- 2. HEADER E NAVEGAÇÃO INTERATIVA --- */
 header {
     background-color: #2b6cb0;
     padding: 1rem 5%;
@@ -18,37 +20,82 @@ header {
     justify-content: space-between;
     align-items: center;
     color: white;
+    position: sticky; /* Mantém a barra visível ao rolar */
+    top: 0;
+    z-index: 1000;
 }
 
 .logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; }
 
-nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+    margin: 0; 
+    padding: 0; 
+}
 
-nav a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: bold; }
+/* Estilo base dos links do menu */
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: bold; 
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Suaviza a transição de cor e fundo */
+}
 
-/* Hero Section */
+/* INTERATIVIDADE: Texto azul escuro e fundo branco ao passar o mouse */
+nav a:hover { 
+    color: #1a365d; /* Azul escuro solicitado */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco suave para dar contraste */
+}
+
+/* --- 3. HERO SECTION --- */
 .hero {
     background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('img_celeris.jpg');
     background-size: cover;
-    background-position: left; /* Mostra o lado esquerdo da imagem */
+    background-position: left;
     color: white;
     text-align: center;
     padding: 100px 10%;
 }
 
+/* Botão principal com efeito de escala e cor */
 .btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 15px 30px;
     background: white;
     color: #2b6cb0;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Arredondado moderno */
     font-weight: bold;
     margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Seções e Grid */
-section { padding: 40px 10%; text-align: center; }
+.btn:hover {
+    background-color: #1a365d; /* Muda para azul escuro */
+    color: white;
+    transform: scale(1.05); /* Pulsa levemente */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* --- 4. SEÇÕES E GRIDS --- */
+section { 
+    padding: 60px 10%; 
+    text-align: center; 
+}
+
+/* Linhas decorativas abaixo dos títulos */
+section h2 + h2 { 
+    margin-top: -20px; 
+    margin-bottom: 30px; 
+    color: #2b6cb0; 
+    font-weight: lighter; 
+}
 
 .grid {
     display: grid;
@@ -57,16 +104,46 @@ section { padding: 40px 10%; text-align: center; }
     margin-top: 30px;
 }
 
+/* --- 5. CARDS INTERATIVOS --- */
 .card {
-    padding: 25px;
+    padding: 30px;
     background: #f7fafc;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    border: 1px solid transparent;
 }
 
+/* Efeito de levitação do Card */
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    background-color: #ffffff;
+    border-color: #2b6cb0;
+}
+
+/* Estilo dos Ícones Font Awesome */
+.card i {
+    color: #2b6cb0; 
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+/* O ícone reage ao mouse passando no card */
+.card:hover i {
+    color: #ed8936; /* Muda para cor de destaque (dourado) */
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* --- 6. FOOTER --- */
 footer {
     background: #1a365d;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 40px;
+    font-size: 0.9rem;
 }
+
+footer p { margin: 5px 0; }
